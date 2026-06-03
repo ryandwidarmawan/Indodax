@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-28T23:41:15.332386" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\Ryan\mobile-automation\tests">
+<suite id="s1-s1" name="Home Test" source="C:\Users\Ryan\mobile-automation\tests\home_test.robot">
+<kw name="Open Mobile Application" owner="mobile_keywords" type="SETUP">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>noReset=true</arg>
+<doc>Opens a new application to the given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.19/guides/caps/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | No     | alias             |</doc>
+<status status="PASS" start="2026-05-28T23:41:15.572161" elapsed="9.408373"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-28T23:41:34.981462" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-28T23:41:24.980709" elapsed="10.000879"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:15.571871" elapsed="19.409799"/>
+</kw>
+<test id="s1-s1-t1" name="Verify Home Screen" line="10">
+<kw name="Verify Home Loaded" owner="home_screen">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:35.892147" level="INFO">xpath criteria: //*[@text='Home']</msg>
+<arg>${HOME_NAV}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:34.982348" elapsed="0.909894"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:34.982175" elapsed="0.910140"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:34.981733" elapsed="0.910819"/>
+</test>
+<test id="s1-s1-t2" name="Verify Bottom Navigation" line="13">
+<kw name="Verify Bottom Navigation Exists" owner="home_screen">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:36.540753" level="INFO">xpath criteria: //*[@text='Home']</msg>
+<arg>${HOME_NAV}</arg>
+<arg>10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:35.893380" elapsed="0.647444"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:36.811831" level="INFO">xpath criteria: //*[@text='Market']</msg>
+<arg>${MARKET_NAV}</arg>
+<arg>10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:36.540934" elapsed="0.270963"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:37.068303" level="INFO">xpath criteria: //*[@text='Wallet']</msg>
+<arg>${WALLET_NAV}</arg>
+<arg>10s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:36.812038" elapsed="0.256322"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:35.893170" elapsed="1.175245"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:35.892869" elapsed="1.175763"/>
+</test>
+<test id="s1-s1-t3" name="Verify Market Screen" line="16">
+<kw name="Go To Market Screen" owner="market_screen">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:37.323220" level="INFO">xpath criteria: //*[@text='Market']</msg>
+<arg>${MARKET_TAB}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:37.069380" elapsed="0.253933"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:37.324097" level="INFO">Clicking element 'xpath=//*[@text='Market']'.</msg>
+<msg time="2026-05-28T23:41:39.005555" level="INFO">xpath criteria: //*[@text='Market']</msg>
+<arg>${MARKET_TAB}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-28T23:41:37.323404" elapsed="1.682250"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:37.069225" elapsed="1.936486"/>
+</kw>
+<kw name="Verify Market Screen" owner="market_screen">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:39.346581" level="INFO">xpath criteria: //*[contains(@text,'Search')]</msg>
+<arg>${SEARCH_INPUT}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:39.006198" elapsed="0.340436"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:39.642603" level="INFO">xpath criteria: //*[@text='BTC']</msg>
+<arg>${BTC_COIN}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:39.346715" elapsed="0.295929"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:39.005991" elapsed="0.636695"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:37.068930" elapsed="2.573935"/>
+</test>
+<test id="s1-s1-t4" name="Verify Coins On Market" line="20">
+<kw name="Verify Coins On Market" owner="market_screen">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:40.418062" level="INFO">xpath criteria: //*[@text='BTC']</msg>
+<arg>${BTC_COIN}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:39.643507" elapsed="0.774627"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:39.643376" elapsed="0.774820"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:39.643135" elapsed="0.775244"/>
+</test>
+<test id="s1-s1-t5" name="Verify BTC Detail" line="23">
+<kw name="Open BTC Detail" owner="market_screen">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:40.419597" level="INFO">Clicking element 'xpath=//*[@text='BTC']'.</msg>
+<msg time="2026-05-28T23:41:41.216036" level="INFO">xpath criteria: //*[@text='BTC']</msg>
+<arg>${BTC_COIN}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-28T23:41:40.419000" elapsed="0.797118"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:40.418848" elapsed="0.797329"/>
+</kw>
+<kw name="Verify BTC Detail" owner="market_screen">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:42.487847" level="INFO">xpath criteria: //*[contains(@text,'Bitcoin Price')]
+xpath criteria: //*[contains(@text,'Bitcoin Price')]</msg>
+<arg>${BTC_PRICE}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:41.216710" elapsed="1.271200"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:42.597954" level="INFO">xpath criteria: //*[@text='1D']</msg>
+<arg>${TIMEFRAME_1D}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:42.488014" elapsed="0.109983"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:42.712025" level="INFO">xpath criteria: //*[@text='1W']</msg>
+<arg>${TIMEFRAME_1W}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:42.598076" elapsed="0.113990"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:42.819653" level="INFO">xpath criteria: //*[@text='1M']</msg>
+<arg>${TIMEFRAME_1M}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:42.712137" elapsed="0.107560"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:42.922476" level="INFO">xpath criteria: //*[@text='News']</msg>
+<arg>${NEWS_TAB}</arg>
+<arg>20s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:42.819795" elapsed="0.102719"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:41.216502" elapsed="1.706053"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:40.418579" elapsed="2.504159"/>
+</test>
+<test id="s1-s1-t6" name="Verify BTC News Tab" line="27">
+<kw name="Open News Tab" owner="market_screen">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:42.923896" level="INFO">Clicking element 'xpath=//*[@text='News']'.</msg>
+<msg time="2026-05-28T23:41:43.074339" level="INFO">xpath criteria: //*[@text='News']</msg>
+<arg>${NEWS_TAB}</arg>
+<doc>Clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-28T23:41:42.923347" elapsed="0.151035"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-28T23:41:45.074870" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-28T23:41:43.074453" elapsed="2.000520"/>
+</kw>
+<doc>Berpindah dari tab Market ke tab News di dalam Detail Koin</doc>
+<status status="PASS" start="2026-05-28T23:41:42.923218" elapsed="2.151818"/>
+</kw>
+<kw name="Verify News Data" owner="market_screen">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:45.235115" level="INFO">xpath criteria: //*[contains(@text, 'ago')]</msg>
+<arg>${NEWS_ITEM}</arg>
+<arg>15s</arg>
+<doc>Waits until the element specified by the ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-28T23:41:45.075600" elapsed="0.159565"/>
+</kw>
+<kw name="Get Text" owner="AppiumLibrary">
+<msg time="2026-05-28T23:41:45.401264" level="INFO">Element 'xpath=//*[contains(@text, 'ago')]' text is '• 	 38m ago' </msg>
+<msg time="2026-05-28T23:41:45.401298" level="INFO">xpath criteria: //*[contains(@text, 'ago')]</msg>
+<msg time="2026-05-28T23:41:45.401390" level="INFO">${news_timestamp} = • 	 38m ago</msg>
+<var>${news_timestamp}</var>
+<arg>${NEWS_ITEM}</arg>
+<doc>Returns the text of the element with the ``locator``.</doc>
+<status status="PASS" start="2026-05-28T23:41:45.235243" elapsed="0.166171"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- TAB NEWS BERHASIL DIMUAT ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T23:41:45.401476" elapsed="0.000262"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Ditemukan artikel dengan waktu: ${news_timestamp}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T23:41:45.401809" elapsed="0.000215"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>--------------------------------</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-05-28T23:41:45.402092" elapsed="0.000163"/>
+</kw>
+<doc>Memastikan list berita berhasil dimuat dengan mendeteksi timestamp item</doc>
+<status status="PASS" start="2026-05-28T23:41:45.075355" elapsed="0.326937"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:42.922972" elapsed="2.479423"/>
+</test>
+<kw name="Close Mobile Application" owner="mobile_keywords" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and the webdriver session.</doc>
+<status status="PASS" start="2026-05-28T23:41:45.402896" elapsed="0.818755"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:45.402805" elapsed="0.818928"/>
+</kw>
+<status status="PASS" start="2026-05-28T23:41:15.358328" elapsed="30.863425"/>
+</suite>
+<status status="PASS" start="2026-05-28T23:41:15.333321" elapsed="30.889007"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="6" fail="0" skip="0">Tests</stat>
+<stat name="Home Test" id="s1-s1" pass="6" fail="0" skip="0">Tests.Home Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

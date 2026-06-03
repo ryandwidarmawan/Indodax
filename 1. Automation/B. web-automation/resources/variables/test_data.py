@@ -1,0 +1,4 @@
+EXPECTED_PAIRS = [
+    "USDT/IDR",
+    "BTC/IDR"
+]

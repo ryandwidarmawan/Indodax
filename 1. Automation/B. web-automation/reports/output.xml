@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-05-29T01:10:48.803587" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\Ryan\web-automation\tests">
+<suite id="s1-s1" name="Market Test" source="C:\Users\Ryan\web-automation\tests\market_test.robot">
+<kw name="Start Browser" owner="browser_keywords" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-05-29T01:10:48.956874" level="INFO">{"browser": "chromium", "headless": false, "args": ["--start-maximized"], "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\Ryan\\web-automation\\reports\\browser\\traces\\temp\\3c8865bb-b8ab-4450-8b73-2b499aaf2b63"}</msg>
+<msg time="2026-05-29T01:10:48.974873" level="INFO">Starting Browser process C:\Users\Ryan\AppData\Local\Programs\Python\Python314\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:53482</msg>
+<msg time="2026-05-29T01:10:49.647514" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"args":["--start-maximized"],"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\Ryan\\web-automation\\reports\\browser\\traces\\temp\\3c8865bb-b8ab-4450-8b73-2b499aaf2b63"}</msg>
+<arg>chromium</arg>
+<arg>headless=False</arg>
+<arg>args=["--start-maximized"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-05-29T01:10:48.956364" elapsed="0.691316"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2026-05-29T01:10:49.649118" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": null
+}</msg>
+<msg time="2026-05-29T01:10:49.655856" level="INFO">Successfully created context. </msg>
+<msg time="2026-05-29T01:10:49.655901" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': None}</msg>
+<arg>viewport=None</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-05-29T01:10:49.647993" elapsed="0.007961"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-05-29T01:10:49.728316" level="INFO">Successfully initialized new page object and opened url: about:blank</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-05-29T01:10:49.656086" elapsed="0.072415"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:48.956011" elapsed="0.772586"/>
+</kw>
+<test id="s1-s1-t1" name="Scenario 1 - Open Homepage" line="12">
+<kw name="Open Indodax Homepage" owner="home_screen">
+<kw name="Go To" owner="Browser">
+<msg time="2026-05-29T01:10:50.606453" level="INFO">Successfully opened URL https://indodax.com/</msg>
+<arg>${BASE_URL}${MARKET_PATH}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2026-05-29T01:10:49.735858" elapsed="0.870754"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:49.735546" elapsed="0.871179"/>
+</kw>
+<kw name="Verify Homepage Loaded" owner="home_screen">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-05-29T01:10:50.621933" level="INFO">Waited for Element with selector xpath=(//a[contains(@href,'market')])[1] at state visible</msg>
+<arg>${HEADER_MARKET_MENU}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-05-29T01:10:50.607380" elapsed="0.014658"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:50.607009" elapsed="0.015112"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:49.728669" elapsed="0.893649"/>
+</test>
+<test id="s1-s1-t2" name="Scenario 2 - Verify Top Menus" line="17">
+<kw name="Verify Top Navigation Menus Exists" owner="home_screen">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-05-29T01:10:50.631690" level="INFO">Waited for Element with selector xpath=(//a[contains(@href,'market')])[1] at state visible</msg>
+<arg>${HEADER_MARKET_MENU}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-05-29T01:10:50.629188" elapsed="0.002567"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-05-29T01:10:50.634175" level="INFO">Waited for Element with selector xpath=(//a[contains(@href,'academy')])[1] at state visible</msg>
+<arg>${HEADER_ACADEMY_MENU}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-05-29T01:10:50.631840" elapsed="0.002391"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-05-29T01:10:50.638967" level="INFO">Waited for Element with selector xpath=(//a[contains(@href,'otc')])[1] at state visible</msg>
+<arg>${HEADER_OTC_MENU}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-05-29T01:10:50.634310" elapsed="0.004713"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:50.628958" elapsed="0.010117"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:50.626768" elapsed="0.012427"/>
+</test>
+<test id="s1-s1-t3" name="Scenario 3 - Open Market And Verify Coins" line="21">
+<kw name="Navigate To Market Menu" owner="home_screen">
+<kw name="Click" owner="Browser">
+<msg time="2026-05-29T01:10:50.644351" level="INFO">Clicks the element 'xpath=(//a[contains(@href,'market')])[1]'.</msg>
+<arg>${HEADER_MARKET_MENU}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-29T01:10:50.644119" elapsed="0.414855"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:50.643926" elapsed="0.415159"/>
+</kw>
+<kw name="Verify Market Screen Loaded" owner="market_screen">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-05-29T01:10:51.457112" level="INFO">Waited for Element with selector xpath=(//a[contains(@href,'USDTIDR')])[1] at state visible</msg>
+<arg>${COIN_USDT_ROW}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-05-29T01:10:51.059677" elapsed="0.397613"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:51.059358" elapsed="0.398029"/>
+</kw>
+<kw name="Verify USDT and BTC Coins Exists" owner="market_screen">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-05-29T01:10:51.482208" level="INFO">Waited for Element with selector xpath=(//a[contains(@href,'USDTIDR')])[1] at state visible</msg>
+<arg>${COIN_USDT_ROW}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-05-29T01:10:51.457960" elapsed="0.024319"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-05-29T01:10:51.498387" level="INFO">Waited for Element with selector xpath=(//a[contains(@href,'BTCIDR')])[1] at state visible</msg>
+<arg>${COIN_BTC_ROW}</arg>
+<arg>visible</arg>
+<arg>timeout=20s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-05-29T01:10:51.482386" elapsed="0.016060"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:51.457666" elapsed="0.040847"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:50.641960" elapsed="0.856696"/>
+</test>
+<test id="s1-s1-t4" name="Scenario 4 - Open BTC Detail" line="29">
+<kw name="Click BTC Coin Row" owner="market_screen">
+<kw name="Click" owner="Browser">
+<msg time="2026-05-29T01:10:51.510996" level="INFO">Clicks the element 'xpath=(//a[contains(@href,'BTCIDR')])[1]'.</msg>
+<arg>${COIN_BTC_ROW}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-29T01:10:51.510713" elapsed="0.892145"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:51.510475" elapsed="0.892492"/>
+</kw>
+<kw name="Handle Trade Preference Popup" owner="market_screen">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-05-29T01:10:53.050751" level="INFO">Waited for Element with selector xpath=//*[contains(text(),'Trade Klasik')] at state visible</msg>
+<arg>${RADIO_TRADE_KLASIK}</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-05-29T01:10:52.404048" elapsed="0.646869"/>
+</kw>
+<msg time="2026-05-29T01:10:53.051067" level="INFO">${popup_exist} = True</msg>
+<var>${popup_exist}</var>
+<arg>Wait For Elements State</arg>
+<arg>${RADIO_TRADE_KLASIK}</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-05-29T01:10:52.403735" elapsed="0.647362"/>
+</kw>
+<if>
+<branch type="IF" condition="${popup_exist}">
+<kw name="Click" owner="Browser">
+<msg time="2026-05-29T01:10:53.051838" level="INFO">Clicks the element 'xpath=//*[contains(text(),'Trade Klasik')]'.</msg>
+<arg>${RADIO_TRADE_KLASIK}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-29T01:10:53.051477" elapsed="0.102087"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-29T01:10:54.154366" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-29T01:10:53.153739" elapsed="1.000747"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-05-29T01:10:54.155121" level="INFO">Clicks the element 'xpath=//*[contains(text(),'Simpan Tampilan')]'.</msg>
+<arg>${BUTTON_SIMPAN_TAMPILAN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-05-29T01:10:54.154640" elapsed="0.258196"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-29T01:10:59.413784" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-29T01:10:54.413015" elapsed="5.000881"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:53.051205" elapsed="6.362753"/>
+</branch>
+<status status="PASS" start="2026-05-29T01:10:53.051168" elapsed="6.362837"/>
+</if>
+<status status="PASS" start="2026-05-29T01:10:52.403326" elapsed="7.010719"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:51.502100" elapsed="7.912139"/>
+</test>
+<kw name="Close Browser Session" owner="browser_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-05-29T01:10:59.591550" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-29T01:10:59.420678" elapsed="0.171032"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:59.420414" elapsed="0.171390"/>
+</kw>
+<status status="PASS" start="2026-05-29T01:10:48.824191" elapsed="10.767639"/>
+</suite>
+<status status="PASS" start="2026-05-29T01:10:48.804478" elapsed="10.790445"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="4" fail="0" skip="0">Tests</stat>
+<stat name="Market Test" id="s1-s1" pass="4" fail="0" skip="0">Tests.Market Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

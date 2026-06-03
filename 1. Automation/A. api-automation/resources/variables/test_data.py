@@ -1,0 +1,5 @@
+EXPECTED_PAIRS = [
+    "BTCIDR",
+    "ETHIDR",
+    "ADAIDR"
+]
